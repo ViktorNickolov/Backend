@@ -2,8 +2,8 @@
 
 ## Description
 
-This is a clinic management system that allows users to manage their patients and appointments. Simple CRUD operations
-are performed on the patients and appointments. Generate patient reports and appointment reports PDF files.
+This is a clinic management system that allows users to manage their clients and appointments. Simple CRUD operations
+are performed on the clients and appointments. Generate client reports and appointment reports PDF files.
 
 ![Entity Diagram](./diagram.png)
 
@@ -20,7 +20,7 @@ are performed on the patients and appointments. Generate patient reports and app
 * Clone the repository
 * Open the project in your favorite IDE
 * Run `mvn clean install` to build the project
-* Create a database named `ClinicManagementSystem` in Postgres
+* Create a database named `ClientManagementSystem` in Postgres
 
 ## Entity Classes
 
@@ -102,7 +102,7 @@ are performed on the patients and appointments. Generate patient reports and app
 - in_progress Boolean
 - total_cost BigDecimal
 - amount_paid BigDecimal
-- Patient patient (Many to One)
+- Patient client (Many to One)
 - List<Appointment> appointments (One to Many)
 - List<Document> documents (One to Many)
 
@@ -145,7 +145,7 @@ are performed on the patients and appointments. Generate patient reports and app
 - url String(255)
 - details
 - DocumentType document_type (Many to One)
-- Patient patient (Many to One)
+- Patient client (Many to One)
 - PatientCase patient_case (Many to One)
 - Appointment appointment (Many to One)
 - InDepartment in_department (Many to One)
