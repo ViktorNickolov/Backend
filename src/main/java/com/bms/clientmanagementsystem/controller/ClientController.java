@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/clients")
 @Slf4j
+@CrossOrigin(origins = "http://localhost:3000")
 public class ClientController {
     private final ClientService clientService;
 
@@ -25,7 +26,7 @@ public class ClientController {
     public ResponseEntity<Void> createClient(@RequestBody CreateClientRequest request) {
         clientService.createClient(request);
 
-        log.info(ControllerLogMessage.Patient.PATIENT_CREATE);
+        log.info(ControllerLogMessage.Client.Client_CREATE);
         return ResponseEntity.ok().build();
     }
 
@@ -33,7 +34,7 @@ public class ClientController {
     public ResponseEntity<Void> updateClient(@PathVariable String id, @RequestBody UpdateClientRequest request) {
         clientService.updateClient(id, request);
 
-        log.info(ControllerLogMessage.Patient.PATIENT_UPDATE + id);
+        log.info(ControllerLogMessage.Client.Client_UPDATE + id);
         return ResponseEntity.ok().build();
     }
 
@@ -41,23 +42,23 @@ public class ClientController {
     public ResponseEntity<Void> deleteClient(@PathVariable String id) {
         clientService.deleteClient(id);
 
-        log.info(ControllerLogMessage.Patient.PATIENT_DELETE + id);
+        log.info(ControllerLogMessage.Client.Client_DELETE + id);
         return ResponseEntity.ok().build();
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ClientDto> findClientById(@PathVariable String id) {
-        ClientDto patient = clientService.findClientById(id);
+        ClientDto client = clientService.findClientById(id);
 
-        log.info(ControllerLogMessage.Patient.PATIENT_FIND + id);
-        return ResponseEntity.ok(patient);
+        log.info(ControllerLogMessage.Client.Client_FIND + id);
+        return ResponseEntity.ok(client);
     }
 
     @GetMapping
     public ResponseEntity<List<ClientDto>> findAllClients() {
-        List<ClientDto> patients = clientService.findAllClients();
+        List<ClientDto> Clients = clientService.findAllClients();
 
-        log.info(ControllerLogMessage.Patient.PATIENT_FIND_ALL);
-        return ResponseEntity.ok(patients);
+        log.info(ControllerLogMessage.Client.Client_FIND_ALL);
+        return ResponseEntity.ok(Clients);
     }
 }

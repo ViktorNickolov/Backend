@@ -11,5 +11,5 @@ public class StatusAppointmentDto {
         String id;
         LocalDateTime startTime;
         LocalDateTime endTime;
-        String patientCaseId;
+        String ClientCaseId;
 }

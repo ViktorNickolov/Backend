@@ -27,39 +27,6 @@ public class BusinessLogMessage {
         public static final String APPOINTMENT_LIST_EMPTY = "Appointment list is empty";
     }
 
-    public static class Clinic {
-        private Clinic() {
-            throw new IllegalStateException(BusinessMessage.ILLEGAL_STATE_EXCEPTION);
-        }
-
-        public static final String CLINIC_CREATED = "Clinic created successfully";
-        public static final String CLINIC_UPDATED = "Clinic updated successfully : {}";
-        public static final String CLINIC_DELETED = "Clinic deleted successfully : {}";
-        public static final String CLINIC_FOUND = "Clinic found successfully : {}";
-        public static final String CLINIC_LIST_FOUND = "Clinic list found successfully";
-        public static final String CLINIC_NOT_FOUND = "Clinic not found : {}";
-        public static final String CLINIC_LIST_EMPTY = "Clinic list is empty";
-        public static final String CLINIC_ALREADY_EXISTS = "Clinic already exists : {}";
-    }
-
-    public static class Department {
-        private Department() {
-            throw new IllegalStateException(BusinessMessage.ILLEGAL_STATE_EXCEPTION);
-        }
-
-        public static final String CLINIC_DELETED_FROM_DEPARTMENT = "Clinic deleted from department successfully : {}";
-        public static final String CLINIC_ADDED_TO_DEPARTMENT = "Clinic added to department successfully : {}";
-        public static final String CLINIC_UPDATED_IN_DEPARTMENT = "Clinic updated in department successfully : {}";
-        public static final String DEPARTMENT_CREATED = "Department created successfully";
-        public static final String DEPARTMENT_UPDATED = "Department updated successfully : {}";
-        public static final String DEPARTMENT_DELETED = "Department deleted successfully : {}";
-        public static final String DEPARTMENT_FOUND = "Department found successfully : {}";
-        public static final String DEPARTMENT_LIST_FOUND = "Department list found successfully";
-        public static final String DEPARTMENT_NOT_FOUND = "Department not found : {}";
-        public static final String DEPARTMENT_LIST_EMPTY = "Department list is empty";
-        public static final String DEPARTMENT_ALREADY_EXISTS = "Department already exists : {}";
-    }
-
     public static class Document {
         private Document() {
             throw new IllegalStateException(BusinessMessage.ILLEGAL_STATE_EXCEPTION);
@@ -75,124 +42,34 @@ public class BusinessLogMessage {
         public static final String DOCUMENT_LIST_EMPTY = "Document list is empty";
     }
 
-    public static class DocumentType {
-        private DocumentType() {
+    public static class Client {
+        private Client() {
             throw new IllegalStateException(BusinessMessage.ILLEGAL_STATE_EXCEPTION);
         }
 
-        public static final String DOCUMENT_TYPE_CREATED = "Document type created successfully";
-        public static final String DOCUMENT_TYPE_UPDATED = "Document type updated successfully : {}";
-        public static final String DOCUMENT_TYPE_DELETED = "Document type deleted successfully : {}";
-        public static final String DOCUMENT_TYPE_FOUND = "Document type found successfully : {}";
-        public static final String DOCUMENT_TYPE_LIST_FOUND = "Document type list found successfully";
-        public static final String DOCUMENT_TYPE_NOT_FOUND = "Document type not found : {}";
-        public static final String DOCUMENT_TYPE_LIST_EMPTY = "Document type list is empty";
-        public static final String DOCUMENT_TYPE_ALREADY_EXISTS = "Document type already exists : {}";
+        public static final String Client_CREATED = "Client created successfully";
+        public static final String Client_UPDATED = "Client updated successfully : {}";
+        public static final String Client_DELETED = "Client deleted successfully : {}";
+        public static final String Client_FOUND = "Client found successfully : {}";
+        public static final String Client_LIST_FOUND = "Client list found successfully";
+        public static final String Client_NOT_FOUND = "Client not found : {}";
+        public static final String Client_LIST_EMPTY = "Client list is empty";
+        public static final String Client_ALREADY_EXISTS = "Client already exists : {}";
     }
 
-    public static class Employee {
-        private Employee() {
+    public static class ClientCase {
+        private ClientCase() {
             throw new IllegalStateException(BusinessMessage.ILLEGAL_STATE_EXCEPTION);
         }
 
-        public static final String EMPLOYEE_CREATED = "Employee created successfully";
-        public static final String EMPLOYEE_UPDATED = "Employee updated successfully : {}";
-        public static final String EMPLOYEE_DELETED = "Employee deleted successfully : {}";
-        public static final String EMPLOYEE_FOUND = "Employee found successfully : {}";
-        public static final String EMPLOYEE_LIST_FOUND = "Employee list found successfully";
-        public static final String EMPLOYEE_NOT_FOUND = "Employee not found : {}";
-        public static final String EMPLOYEE_LIST_EMPTY = "Employee list is empty";
-        public static final String EMPLOYEE_ALREADY_EXISTS = "Employee already exists : {}";
-    }
-
-    public static class HasRole {
-        private HasRole() {
-            throw new IllegalStateException(BusinessMessage.ILLEGAL_STATE_EXCEPTION);
-        }
-
-        public static final String HAS_ROLE_CREATED = "Has role created successfully";
-        public static final String HAS_ROLE_UPDATED = "Has role updated successfully : {}";
-        public static final String HAS_ROLE_DELETED = "Has role deleted successfully : {}";
-        public static final String HAS_ROLE_FOUND = "Has role found successfully : {}";
-        public static final String HAS_ROLE_LIST_FOUND = "Has role list found successfully";
-        public static final String HAS_ROLE_NOT_FOUND = "Has role not found : {}";
-        public static final String HAS_ROLE_LIST_EMPTY = "Has role list is empty";
-    }
-
-    public static class InDepartment {
-        private InDepartment() {
-            throw new IllegalStateException(BusinessMessage.ILLEGAL_STATE_EXCEPTION);
-        }
-
-        public static final String IN_DEPARTMENT_CREATED = "In department created successfully";
-        public static final String IN_DEPARTMENT_UPDATED = "In department updated successfully : {}";
-        public static final String IN_DEPARTMENT_DELETED = "In department deleted successfully : {}";
-        public static final String IN_DEPARTMENT_FOUND = "In department found successfully : {}";
-        public static final String IN_DEPARTMENT_LIST_FOUND = "In department list found successfully";
-        public static final String IN_DEPARTMENT_NOT_FOUND = "In department not found : {}";
-        public static final String IN_DEPARTMENT_LIST_EMPTY = "In department list is empty";
-    }
-
-    public static class Patient {
-        private Patient() {
-            throw new IllegalStateException(BusinessMessage.ILLEGAL_STATE_EXCEPTION);
-        }
-
-        public static final String PATIENT_CREATED = "Patient created successfully";
-        public static final String PATIENT_UPDATED = "Patient updated successfully : {}";
-        public static final String PATIENT_DELETED = "Patient deleted successfully : {}";
-        public static final String PATIENT_FOUND = "Patient found successfully : {}";
-        public static final String PATIENT_LIST_FOUND = "Patient list found successfully";
-        public static final String PATIENT_NOT_FOUND = "Patient not found : {}";
-        public static final String PATIENT_LIST_EMPTY = "Patient list is empty";
-        public static final String PATIENT_ALREADY_EXISTS = "Patient already exists : {}";
-    }
-
-    public static class PatientCase {
-        private PatientCase() {
-            throw new IllegalStateException(BusinessMessage.ILLEGAL_STATE_EXCEPTION);
-        }
-
-        public static final String PATIENT_CASE_DOCUMENT_CREATED = "Patient case document created successfully";
-        public static final String PATIENT_CASE_COMPLETED = "Patient case completed successfully : {}";
-        public static final String PATIENT_CASE_CREATED = "Patient case created successfully";
-        public static final String PATIENT_CASE_UPDATED = "Patient case updated successfully : {}";
-        public static final String PATIENT_CASE_FOUND = "Patient case found successfully : {}";
-        public static final String PATIENT_CASE_LIST_FOUND = "Patient case list found successfully";
-        public static final String PATIENT_CASE_NOT_FOUND = "Patient case not found : {}";
-        public static final String PATIENT_CASE_LIST_EMPTY = "Patient case list is empty";
-    }
-
-    public static class Role {
-        private Role() {
-            throw new IllegalStateException(BusinessMessage.ILLEGAL_STATE_EXCEPTION);
-        }
-
-        public static final String ROLE_CREATED = "Role created successfully";
-        public static final String ROLE_UPDATED = "Role updated successfully : {}";
-        public static final String ROLE_DELETED = "Role deleted successfully : {}";
-        public static final String ROLE_FOUND = "Role found successfully : {}";
-        public static final String ROLE_LIST_FOUND = "Role list found successfully";
-        public static final String ROLE_NOT_FOUND = "Role not found : {}";
-        public static final String ROLE_LIST_EMPTY = "Role list is empty";
-        public static final String ROLE_ALREADY_EXISTS = "Role already exists : {}";
-    }
-
-    public static class Schedule {
-
-        private Schedule() {
-            throw new IllegalStateException(BusinessMessage.ILLEGAL_STATE_EXCEPTION);
-        }
-
-        public static final String SCHEDULE_DATE_IS_BEFORE_TODAY = "Schedule date is before today";
-
-        public static final String SCHEDULE_CREATED = "Schedule created successfully";
-        public static final String SCHEDULE_UPDATED = "Schedule updated successfully : {}";
-        public static final String SCHEDULE_DELETED = "Schedule deleted successfully : {}";
-        public static final String SCHEDULE_FOUND = "Schedule found successfully : {}";
-        public static final String SCHEDULE_LIST_FOUND = "Schedule list found successfully";
-        public static final String SCHEDULE_NOT_FOUND = "Schedule not found : {}";
-        public static final String SCHEDULE_LIST_EMPTY = "Schedule list is empty";
+        public static final String Client_CASE_DOCUMENT_CREATED = "Client case document created successfully";
+        public static final String Client_CASE_COMPLETED = "Client case completed successfully : {}";
+        public static final String Client_CASE_CREATED = "Client case created successfully";
+        public static final String Client_CASE_UPDATED = "Client case updated successfully : {}";
+        public static final String Client_CASE_FOUND = "Client case found successfully : {}";
+        public static final String Client_CASE_LIST_FOUND = "Client case list found successfully";
+        public static final String Client_CASE_NOT_FOUND = "Client case not found : {}";
+        public static final String Client_CASE_LIST_EMPTY = "Client case list is empty";
     }
 
     public static class Status {

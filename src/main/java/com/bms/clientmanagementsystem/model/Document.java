@@ -18,8 +18,6 @@ public class Document {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
 
-    private String documentInternalId;
-
     private String name;
 
     private LocalDateTime createdTime;

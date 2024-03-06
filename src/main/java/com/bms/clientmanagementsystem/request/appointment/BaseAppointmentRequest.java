@@ -13,5 +13,4 @@ public class BaseAppointmentRequest {
     private LocalDateTime startTime;
     private String statusId;
     private String clientCaseId;
-    private String inDepartmentId;
 }

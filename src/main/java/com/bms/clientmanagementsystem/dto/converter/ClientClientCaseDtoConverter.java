@@ -14,9 +14,7 @@ public class ClientClientCaseDtoConverter {
                 from.getId(),
                 from.getStartTime(),
                 from.getEndTime(),
-                from.getInProgress(),
-                from.getTotalCost(),
-                from.getAmountPaid()
+                from.getInProgress()
         );
     }
 

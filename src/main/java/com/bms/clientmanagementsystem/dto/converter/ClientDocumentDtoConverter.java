@@ -12,7 +12,6 @@ public class ClientDocumentDtoConverter {
     public ClientDocumentDto convert(Document from) {
         return new ClientDocumentDto(
                 from.getId(),
-                from.getDocumentInternalId(),
                 from.getName(),
                 from.getUrl(),
                 from.getDetail(),

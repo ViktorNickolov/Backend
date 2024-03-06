@@ -12,5 +12,5 @@ public class AppointmentDto {
     LocalDateTime startTimed;
     LocalDateTime endTimed;
     String statusIdd;
-    String patientCaseIdd;
+    String ClientCaseIdd;
 }

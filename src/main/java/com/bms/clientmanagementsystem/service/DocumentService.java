@@ -44,12 +44,11 @@ public class DocumentService {
     public void createDocument(final CreateDocumentRequest request) {
         Document document = new Document();
 
-        document.setDocumentInternalId(Generator.generateDocumentInternalId());
         document.setName(request.getName());
         document.setCreatedTime(DateHelper.getCurrentDateTime());
         document.setDetail(request.getDetail());
         document.setAppointment(appointmentService.findAppointmentByAppointmentId(request.getAppointmentId()));
-        document.setClientCase(clientCaseService.findPatientCaseByPatientCaseId(request.getClientId()));
+        document.setClientCase(clientCaseService.findClientCaseByClientCaseId(request.getClientId()));
         document.setClient(clientService.findClientByClientId(request.getClientId()));
 
         documentRepository.save(document);
@@ -63,7 +62,7 @@ public class DocumentService {
         document.setDetail(request.getDetail());
         document.setUrl(Generator.generateUrl(document.getId()));
         document.setAppointment(appointmentService.findAppointmentByAppointmentId(request.getAppointmentId()));
-        document.setClientCase(clientCaseService.findPatientCaseByPatientCaseId(request.getClientCaseId()));
+        document.setClientCase(clientCaseService.findClientCaseByClientCaseId(request.getClientCaseId()));
         document.setClient(clientService.findClientByClientId(request.getClientId()));
 
         documentRepository.save(document);

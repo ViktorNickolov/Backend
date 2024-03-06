@@ -7,10 +7,9 @@ import lombok.Data;
 @AllArgsConstructor
 public class ClientDocumentDto {
         String id;
-        String documentInternalId;
         String name;
         String url;
         String detail;
         String appointmentId;
-        String patientCaseId;
+        String ClientCaseId;
 }

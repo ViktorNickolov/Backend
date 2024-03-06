@@ -12,7 +12,6 @@ public class DocumentDtoConverter {
     public DocumentDto convert(Document from) {
         return new DocumentDto(
                 from.getId(),
-                from.getDocumentInternalId(),
                 from.getName(),
                 from.getUrl(),
                 from.getDetail(),

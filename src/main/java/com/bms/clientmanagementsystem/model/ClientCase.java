@@ -25,10 +25,6 @@ public class ClientCase {
 
     private Boolean inProgress;
 
-    private Double totalCost;
-
-    private Double amountPaid;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "client_id")
     private Client client;

@@ -14,14 +14,6 @@ public class DateHelper {
         return LocalDateTime.now();
     }
 
-    public static Integer getDifferenceInHours(LocalDateTime startTime, LocalDateTime endTime) {
-        return endTime.getHour() - startTime.getHour();
-    }
-
-    public static LocalDate getToday() {
-        return LocalDate.now();
-    }
-
     public static LocalDateTime getEndTime(LocalDateTime startTime) {
         return startTime.plusMinutes(30);
     }

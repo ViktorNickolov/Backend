@@ -40,7 +40,7 @@ public class AppointmentService {
         appointment.setStartTime(request.getStartTime());
         appointment.setEndTime(DateHelper.getEndTime(request.getStartTime()));
         appointment.setStatus(statusService.findStatusByStatusId(request.getStatusId()));
-        appointment.setClientCase(clientCaseService.findPatientCaseByPatientCaseId(request.getClientCaseId()));
+        appointment.setClientCase(clientCaseService.findClientCaseByClientCaseId(request.getClientCaseId()));
 
         appointmentRepository.save(appointment);
         log.info(BusinessLogMessage.Appointment.APPOINTMENT_CREATED);
@@ -52,7 +52,7 @@ public class AppointmentService {
         appointment.setStartTime(request.getStartTime());
         appointment.setEndTime(DateHelper.getEndTime(request.getStartTime()));
         appointment.setStatus(statusService.findStatusByStatusId(request.getStatusId()));
-        appointment.setClientCase(clientCaseService.findPatientCaseByPatientCaseId(request.getClientCaseId()));
+        appointment.setClientCase(clientCaseService.findClientCaseByClientCaseId(request.getClientCaseId()));
 
         appointmentRepository.save(appointment);
         log.info(BusinessLogMessage.Appointment.APPOINTMENT_UPDATED + id);

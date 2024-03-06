@@ -27,9 +27,7 @@ public class PdfService {
                 + "_" + clientCase.getStartTime() + ".pdf";
         final String content = "Client Name: " + clientCase.getClient().getFirstName() + "\n "
                 + clientCase.getClient().getLastName() + "\n"
-                + "Client Case Start Time: " + clientCase.getStartTime() + "\n"
-                + "Amount Paid: " + clientCase.getAmountPaid() + "\n"
-                + "Total Cost: " + clientCase.getTotalCost();
+                + "Client Case Start Time: " + clientCase.getStartTime();
         final String localTime = DateHelper.getCurrentDateTime().toString();
 
         Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 18);

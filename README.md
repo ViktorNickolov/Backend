@@ -86,15 +86,15 @@ are performed on the clients and appointments. Generate client reports and appoi
 - details String(255)
 - List<Department> departments (One to Many)
 
-### Patient
+### Client
 
 - id
 - first_name String(64)
 - last_name String(64)
-- List<PatientCase> patient_cases (One to Many)
+- List<ClientCase> Client_cases (One to Many)
 - List<Document> documents (One to Many)
 
-### PatientCase
+### ClientCase
 
 - id
 - start_time LocalDateTime
@@ -102,7 +102,7 @@ are performed on the clients and appointments. Generate client reports and appoi
 - in_progress Boolean
 - total_cost BigDecimal
 - amount_paid BigDecimal
-- Patient client (Many to One)
+- Client client (Many to One)
 - List<Appointment> appointments (One to Many)
 - List<Document> documents (One to Many)
 
@@ -145,7 +145,7 @@ are performed on the clients and appointments. Generate client reports and appoi
 - url String(255)
 - details
 - DocumentType document_type (Many to One)
-- Patient client (Many to One)
-- PatientCase patient_case (Many to One)
+- Client client (Many to One)
+- ClientCase Client_case (Many to One)
 - Appointment appointment (Many to One)
 - InDepartment in_department (Many to One)

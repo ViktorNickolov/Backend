@@ -11,6 +11,6 @@ public class ClientDto {
     String id;
     String firstName;
     String lastName;
-    List<ClientClientCaseDto> patientCases;
+    List<ClientClientCaseDto> ClientCases;
     List<ClientDocumentDto> documents;
 }

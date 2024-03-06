@@ -29,7 +29,7 @@ public class ClientCaseController {
     public ResponseEntity<Void> createClientCase(@RequestBody CreateClientCaseRequest request) {
         clientCaseService.createClientCase(request);
 
-        log.info(ControllerLogMessage.PatientCase.PATIENT_CASE_CREATE);
+        log.info(ControllerLogMessage.ClientCase.Client_CASE_CREATE);
         return ResponseEntity.ok().build();
     }
 
@@ -38,7 +38,7 @@ public class ClientCaseController {
                                                   @RequestBody UpdateClientCaseRequest request) {
         clientCaseService.updateClientCase(id, request);
 
-        log.info(ControllerLogMessage.PatientCase.PATIENT_CASE_UPDATE + id);
+        log.info(ControllerLogMessage.ClientCase.Client_CASE_UPDATE + id);
         return ResponseEntity.ok().build();
     }
 
@@ -46,7 +46,7 @@ public class ClientCaseController {
     public ResponseEntity<Void> completeClientCase(@PathVariable String id) {
         clientCaseService.completeClientCase(id);
 
-        log.info(ControllerLogMessage.PatientCase.PATIENT_CASE_COMPLETE);
+        log.info(ControllerLogMessage.ClientCase.Client_CASE_COMPLETE);
         return ResponseEntity.ok().build();
     }
 
@@ -57,7 +57,7 @@ public class ClientCaseController {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Disposition", "inline; filename=" + id + ".pdf");
 
-        log.info(ControllerLogMessage.PatientCase.PATIENT_CASE_PDF);
+        log.info(ControllerLogMessage.ClientCase.Client_CASE_PDF);
         return ResponseEntity.ok().headers(headers)
                 .contentType(MediaType.APPLICATION_PDF)
                 .body(new InputStreamResource(pdf));
@@ -65,17 +65,17 @@ public class ClientCaseController {
 
     @GetMapping("/{id}")
     public ResponseEntity<ClientCaseDto> findClientCaseById(@PathVariable String id) {
-        ClientCaseDto patientCase = clientCaseService.findClientCaseById(id);
+        ClientCaseDto ClientCase = clientCaseService.findClientCaseById(id);
 
-        log.info(ControllerLogMessage.PatientCase.PATIENT_CASE_FIND + id);
-        return ResponseEntity.ok(patientCase);
+        log.info(ControllerLogMessage.ClientCase.Client_CASE_FIND + id);
+        return ResponseEntity.ok(ClientCase);
     }
 
     @GetMapping
     public ResponseEntity<List<ClientCaseDto>> findAllClientCases() {
-        List<ClientCaseDto> patientCases = clientCaseService.findAllClientCases();
+        List<ClientCaseDto> ClientCases = clientCaseService.findAllClientCases();
 
-        log.info(ControllerLogMessage.PatientCase.PATIENT_CASE_FIND_ALL);
-        return ResponseEntity.ok(patientCases);
+        log.info(ControllerLogMessage.ClientCase.Client_CASE_FIND_ALL);
+        return ResponseEntity.ok(ClientCases);
     }
 }

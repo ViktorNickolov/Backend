@@ -12,7 +12,6 @@ public class ClientCaseDocumentDtoConverter {
     public ClientCaseDocumentDto convert(Document from) {
         return new ClientCaseDocumentDto(
                 from.getId(),
-                from.getDocumentInternalId(),
                 from.getName(),
                 from.getUrl(),
                 from.getDetail(),

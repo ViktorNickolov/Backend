@@ -13,8 +13,6 @@ public class ClientCaseDto {
         LocalDateTime startTime;
         LocalDateTime endTime;
         Boolean inProgress;
-        Double totalCost;
-        Double amountPaid;
         List<ClientCaseAppointmentDto> appointments;
         List<ClientCaseDocumentDto> documents;
 }

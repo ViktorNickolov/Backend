@@ -24,8 +24,6 @@ public class ClientCaseDtoConverter {
                 from.getStartTime(),
                 from.getEndTime(),
                 from.getInProgress(),
-                from.getTotalCost(),
-                from.getAmountPaid(),
                 from.getAppointments() != null ? clientCaseAppointmentDtoConverter.convert(from.getAppointments()) : null,
                 from.getDocuments() != null ? clientCaseDocumentDtoConverter.convert(from.getDocuments()) : null
         );

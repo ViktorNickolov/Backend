@@ -12,6 +12,4 @@ public class ClientClientCaseDto {
         LocalDateTime startTime;
         LocalDateTime endTime;
         Boolean inProgress;
-        Double totalCost;
-        Double amountPaid;
 }

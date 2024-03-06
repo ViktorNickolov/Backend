@@ -2,7 +2,7 @@ package com.bms.clientmanagementsystem.service;
 
 import com.bms.clientmanagementsystem.dto.ClientCaseDto;
 import com.bms.clientmanagementsystem.dto.converter.ClientCaseDtoConverter;
-import com.bms.clientmanagementsystem.exception.PatientCaseNotFoundException;
+import com.bms.clientmanagementsystem.exception.ClientCaseNotFoundException;
 import com.bms.clientmanagementsystem.helper.DateHelper;
 import com.bms.clientmanagementsystem.helper.message.BusinessLogMessage;
 import com.bms.clientmanagementsystem.helper.message.BusinessMessage;
@@ -37,44 +37,40 @@ public class ClientCaseService {
         ClientCase clientCase = new ClientCase();
 
         clientCase.setStartTime(DateHelper.getCurrentDateTime());
-        clientCase.setAmountPaid(request.getAmountPaid());
         clientCase.setClient(clientService.findClientByClientId(request.getClientId()));
         clientCase.setInProgress(true);
-        clientCase.setTotalCost(0.0);
 
         clientCaseRepository.save(clientCase);
-        log.info(BusinessLogMessage.PatientCase.PATIENT_CASE_CREATED);
+        log.info(BusinessLogMessage.ClientCase.Client_CASE_CREATED);
     }
 
     public void updateClientCase(final String id, final UpdateClientCaseRequest request) {
-        ClientCase clientCase = findPatientCaseByPatientCaseId(id);
+        ClientCase clientCase = findClientCaseByClientCaseId(id);
 
-        clientCase.setAmountPaid(request.getAmountPaid());
         clientCase.setClient(clientService.findClientByClientId(request.getClientId()));
 
         clientCaseRepository.save(clientCase);
-        log.info(BusinessLogMessage.PatientCase.PATIENT_CASE_UPDATED + id);
+        log.info(BusinessLogMessage.ClientCase.Client_CASE_UPDATED + id);
     }
 
     public void completeClientCase(final String id) {
-        ClientCase clientCase = findPatientCaseByPatientCaseId(id);
+        ClientCase clientCase = findClientCaseByClientCaseId(id);
 
         clientCase.setEndTime(DateHelper.getCurrentDateTime());
         clientCase.setInProgress(false);
-        clientCase.setTotalCost(calculateTotalCost(clientCase));
         clientCaseRepository.save(clientCase);
-        log.info(BusinessLogMessage.PatientCase.PATIENT_CASE_COMPLETED + id);
+        log.info(BusinessLogMessage.ClientCase.Client_CASE_COMPLETED + id);
     }
 
     public ByteArrayInputStream createClientCaseDocument(final String id) {
-        log.info(BusinessLogMessage.PatientCase.PATIENT_CASE_DOCUMENT_CREATED);
-        return pdfService.generatePdf(findPatientCaseByPatientCaseId(id));
+        log.info(BusinessLogMessage.ClientCase.Client_CASE_DOCUMENT_CREATED);
+        return pdfService.generatePdf(findClientCaseByClientCaseId(id));
     }
 
     public ClientCaseDto findClientCaseById(final String id) {
-        ClientCase clientCase = findPatientCaseByPatientCaseId(id);
+        ClientCase clientCase = findClientCaseByClientCaseId(id);
 
-        log.info(BusinessLogMessage.PatientCase.PATIENT_CASE_FOUND + id);
+        log.info(BusinessLogMessage.ClientCase.Client_CASE_FOUND + id);
         return converter.convert(clientCase);
     }
 
@@ -82,24 +78,18 @@ public class ClientCaseService {
         List<ClientCase> clientCases = clientCaseRepository.findAll();
 
         if (clientCases.isEmpty()) {
-            log.info(BusinessLogMessage.PatientCase.PATIENT_CASE_LIST_EMPTY);
-            throw new PatientCaseNotFoundException(BusinessMessage.PatientCase.PATIENT_CASE_LIST_EMPTY);
+            log.info(BusinessLogMessage.ClientCase.Client_CASE_LIST_EMPTY);
+            throw new ClientCaseNotFoundException(BusinessMessage.ClientCase.Client_CASE_LIST_EMPTY);
         }
 
-        log.info(BusinessLogMessage.PatientCase.PATIENT_CASE_LIST_FOUND);
+        log.info(BusinessLogMessage.ClientCase.Client_CASE_LIST_FOUND);
         return converter.convert(clientCases);
     }
 
-    protected ClientCase findPatientCaseByPatientCaseId(final String id) {
+    protected ClientCase findClientCaseByClientCaseId(final String id) {
         return clientCaseRepository.findById(id).orElseThrow(() -> {
-            log.error(BusinessLogMessage.PatientCase.PATIENT_CASE_NOT_FOUND + id);
-            throw new PatientCaseNotFoundException(BusinessMessage.PatientCase.PATIENT_CASE_NOT_FOUND);
+            log.error(BusinessLogMessage.ClientCase.Client_CASE_NOT_FOUND + id);
+            throw new ClientCaseNotFoundException(BusinessMessage.ClientCase.Client_CASE_NOT_FOUND);
         });
-    }
-
-    private Double calculateTotalCost(final ClientCase clientCase) {
-        final Integer hours = DateHelper.getDifferenceInHours(clientCase.getStartTime(), clientCase.getEndTime());
-
-        return hours * clientCase.getAmountPaid();
     }
 }
