@@ -9,6 +9,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BaseClientCaseRequest {
-    private Double amountPaid;
     private String clientId;
 }
