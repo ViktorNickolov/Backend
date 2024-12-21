@@ -10,6 +10,5 @@ public class ClientCaseDocumentDto {
         String name;
         String url;
         String detail;
-        String appointmentId;
-        String ClientId;
+        String clientId;
 }

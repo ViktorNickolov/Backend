@@ -22,20 +22,17 @@ import java.util.List;
 public class DocumentService {
     private final DocumentRepository documentRepository;
     private final PdfService pdfService;
-    private final AppointmentService appointmentService;
     private final ClientCaseService clientCaseService;
     private final ClientService clientService;
     private final DocumentDtoConverter converter;
 
     public DocumentService(DocumentRepository documentRepository,
                            PdfService pdfService,
-                           AppointmentService appointmentService,
                            ClientCaseService clientCaseService,
                            ClientService clientService,
                            DocumentDtoConverter converter) {
         this.documentRepository = documentRepository;
         this.pdfService = pdfService;
-        this.appointmentService = appointmentService;
         this.clientCaseService = clientCaseService;
         this.clientService = clientService;
         this.converter = converter;
@@ -47,8 +44,7 @@ public class DocumentService {
         document.setName(request.getName());
         document.setCreatedTime(DateHelper.getCurrentDateTime());
         document.setDetail(request.getDetail());
-        document.setAppointment(appointmentService.findAppointmentByAppointmentId(request.getAppointmentId()));
-        document.setClientCase(clientCaseService.findClientCaseByClientCaseId(request.getClientId()));
+        document.setClientCase(clientCaseService.findClientCaseByClientCaseId(request.getClientCaseId()));
         document.setClient(clientService.findClientByClientId(request.getClientId()));
 
         documentRepository.save(document);
@@ -61,7 +57,6 @@ public class DocumentService {
         document.setName(request.getName());
         document.setDetail(request.getDetail());
         document.setUrl(Generator.generateUrl(document.getId()));
-        document.setAppointment(appointmentService.findAppointmentByAppointmentId(request.getAppointmentId()));
         document.setClientCase(clientCaseService.findClientCaseByClientCaseId(request.getClientCaseId()));
         document.setClient(clientService.findClientByClientId(request.getClientId()));
 

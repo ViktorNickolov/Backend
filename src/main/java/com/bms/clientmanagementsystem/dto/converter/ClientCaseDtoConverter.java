@@ -9,12 +9,9 @@ import java.util.stream.Collectors;
 
 @Component
 public class ClientCaseDtoConverter {
-    private final ClientCaseAppointmentDtoConverter clientCaseAppointmentDtoConverter;
     private final ClientCaseDocumentDtoConverter clientCaseDocumentDtoConverter;
 
-    public ClientCaseDtoConverter(ClientCaseAppointmentDtoConverter clientCaseAppointmentDtoConverter,
-                                  ClientCaseDocumentDtoConverter clientCaseDocumentDtoConverter) {
-        this.clientCaseAppointmentDtoConverter = clientCaseAppointmentDtoConverter;
+    public ClientCaseDtoConverter(ClientCaseDocumentDtoConverter clientCaseDocumentDtoConverter) {
         this.clientCaseDocumentDtoConverter = clientCaseDocumentDtoConverter;
     }
 
@@ -23,9 +20,7 @@ public class ClientCaseDtoConverter {
                 from.getId(),
                 from.getStartTime(),
                 from.getEndTime(),
-                from.getInProgress(),
-                from.getAppointments() != null ? clientCaseAppointmentDtoConverter.convert(from.getAppointments()) : null,
-                from.getDocuments() != null ? clientCaseDocumentDtoConverter.convert(from.getDocuments()) : null
+                from.getInProgress()
         );
     }
 

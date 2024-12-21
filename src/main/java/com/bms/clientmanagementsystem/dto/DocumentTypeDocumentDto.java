@@ -10,7 +10,6 @@ public class DocumentTypeDocumentDto {
         String name;
         String url;
         String detail;
-        String appointmentId;
-        String ClientCaseId;
-        String ClientId;
+        String clientCaseId;
+        String clientId;
 }

@@ -22,7 +22,13 @@ public class Client {
     private String firstName;
 
     @Column(length = 64)
+    private String middleName;
+
+    @Column(length = 64)
     private String lastName;
+
+    @Column
+    private int age;
 
     @OneToMany(mappedBy = "client")
     private List<ClientCase> clientCases;

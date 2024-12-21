@@ -15,7 +15,6 @@ public class ClientCaseDocumentDtoConverter {
                 from.getName(),
                 from.getUrl(),
                 from.getDetail(),
-                from.getAppointment() != null ? from.getAppointment().getId() : null,
                 from.getClient() != null ? from.getClient().getId() : null
         );
     }

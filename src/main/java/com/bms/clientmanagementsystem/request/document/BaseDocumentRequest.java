@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 public class BaseDocumentRequest {
     private String name;
     private String detail;
-    private String appointmentId;
     private String clientCaseId;
     private String clientId;
 }

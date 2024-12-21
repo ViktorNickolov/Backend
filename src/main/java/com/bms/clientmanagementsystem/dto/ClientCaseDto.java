@@ -13,6 +13,4 @@ public class ClientCaseDto {
         LocalDateTime startTime;
         LocalDateTime endTime;
         Boolean inProgress;
-        List<ClientCaseAppointmentDto> appointments;
-        List<ClientCaseDocumentDto> documents;
 }

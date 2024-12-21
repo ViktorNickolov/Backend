@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class BaseClientRequest {
     private String firstName;
     private String lastName;
+    private int age;
 }

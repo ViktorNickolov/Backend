@@ -47,11 +47,12 @@ public class DocumentController {
         ByteArrayInputStream pdf = documentService.createDocumentPdf(id);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Disposition", "inline; filename=" + id + ".pdf");
+        headers.setContentType(MediaType.APPLICATION_PDF);
+        headers.setContentDispositionFormData("inline", "attachment");  // Or use "attachment" for download
+        headers.setCacheControl("no-store");
 
         log.info(ControllerLogMessage.Document.DOCUMENT_PDF_CREATE);
         return ResponseEntity.ok().headers(headers)
-                .contentType(MediaType.APPLICATION_PDF)
                 .body(new InputStreamResource(pdf));
     }
 

@@ -25,7 +25,7 @@ public class PdfService {
                 + clientCase.getClient().getLastName();
         final String fileName = clientCase.getClient().getFirstName() + "_" + clientCase.getClient().getLastName()
                 + "_" + clientCase.getStartTime() + ".pdf";
-        final String content = "Client Name: " + clientCase.getClient().getFirstName() + "\n "
+        final String content = "Client Name: " + clientCase.getClient().getFirstName() + " "
                 + clientCase.getClient().getLastName() + "\n"
                 + "Client Case Start Time: " + clientCase.getStartTime();
         final String localTime = DateHelper.getCurrentDateTime().toString();
@@ -69,8 +69,7 @@ public class PdfService {
                 + fileDocument.getCreatedTime().toString() + ".pdf";
         final String content = "Client Name: " + fileDocument.getClient().getFirstName() + " "
                 + fileDocument.getClient().getLastName() + "\n"
-                + "Client Case Start Time: " + fileDocument.getCreatedTime() + "\n"
-                + "Appointment Status: " + fileDocument.getAppointment().getStatus().getName();
+                + "Client Case Start Time: " + fileDocument.getCreatedTime();
 
         final String detailContent = "Detail: " + fileDocument.getDetail();
         final String localTime = DateHelper.getCurrentDateTime().toString();

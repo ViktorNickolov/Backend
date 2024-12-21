@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.bms</groupId>
-    <artifactId>clinic-management-system</artifactId>
+    <artifactId>client-management-system</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>clinic-management-system</name>
-    <description>clinic-management-system</description>
+    <name>client-management-system</name>
+    <description>client-management-system</description>
     <properties>
         <java.version>11</java.version>
     </properties>

@@ -55,11 +55,12 @@ public class ClientCaseController {
         ByteArrayInputStream pdf = clientCaseService.createClientCaseDocument(id);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Disposition", "inline; filename=" + id + ".pdf");
+        headers.setContentType(MediaType.APPLICATION_PDF);
+        headers.setContentDispositionFormData("inline", "attachment");  // Or use "attachment" for download
+        headers.setCacheControl("no-store");
 
         log.info(ControllerLogMessage.ClientCase.Client_CASE_PDF);
         return ResponseEntity.ok().headers(headers)
-                .contentType(MediaType.APPLICATION_PDF)
                 .body(new InputStreamResource(pdf));
     }
 

@@ -29,9 +29,4 @@ public class ClientCase {
     @JoinColumn(name = "client_id")
     private Client client;
 
-    @OneToMany(mappedBy = "clientCase")
-    private List<Appointment> appointments;
-
-    @OneToMany(mappedBy = "clientCase")
-    private List<Document> documents;
 }

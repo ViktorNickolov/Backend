@@ -27,10 +27,6 @@ public class Document {
     private String detail;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "appointment_id")
-    private Appointment appointment;
-
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "client_case_id")
     private ClientCase clientCase;
 

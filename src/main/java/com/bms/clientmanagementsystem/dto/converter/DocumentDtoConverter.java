@@ -15,7 +15,6 @@ public class DocumentDtoConverter {
                 from.getName(),
                 from.getUrl(),
                 from.getDetail(),
-                from.getAppointment() == null ? null : from.getAppointment().getId(),
                 from.getClientCase() == null ? null : from.getClientCase().getId(),
                 from.getClient() == null ? null : from.getClient().getId()
         );
